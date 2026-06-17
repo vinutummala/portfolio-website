@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Vinuthna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom,
+                    #0f0f0f,
+                    #141220,
+                    #0f0f0f);
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #a192cf;
+            border-radius: 20px;
+        }
+
+        #nav {
+            width: 700px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 23px;
+        }
+
+        #nav a:hover {
+            color: black;
+        }
+
+        #nav a.active {
+            color: black;
+        }
+
+        .menuicon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+        #title {
+            color: rgb(206, 206, 206);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #cards {
+            border-top: 2px solid lavender;
+            margin-top: 30px;
+            height: 560px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 50px;
+            scroll-behavior: smooth;
+            border-top-left-radius: 40%;
+            border-top-right-radius: 40%;
+            background: radial-gradient(circle at center,
+                    rgba(161, 146, 207, 0.15) 0%,
+                    rgba(15, 15, 15, 1) 60%);
+        }
+
+        #cards div {
+            height: 400px;
+            width: 400px;
+            min-width: 300px;
+            flex-shrink: 0;
+            border-radius: 20px;
+            color: #a192cf;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(145deg,
+                    #141414,
+                    #1b1826);
+            border: 1px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 0 0 0 1px rgba(161, 146, 207, 0.5);
+            font-size: 17px;
+        }
+
+        #cards div:hover {
+            transform: translateY(-8px);
+            transition: 0.4s;
+        }
+
+        #cards div p {
+            color: rgb(215, 214, 214);
+        }
+
+        #cards div li {
+            list-style-position: inside;
+            color: rgb(215, 214, 214);
+        }
+
+        .tech-list {
+            columns: 2;
+            column-gap: 30px;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .tech-list li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+
+        @media(max-width:768px) {
+
+            /* Header */
+
+            header {
+                height: auto;
+                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            header img {
+                height: 80px;
+            }
+
+            #nav {
+                width: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .menuicon {
+                display: block;
+            }
+
+            #nav a {
+                display: none;
+            }
+
+            #nav.active {
+                position: absolute;
+                top: 100%;
+                right: 15px;
+                width: 220px;
+                background-color: #a192cf;
+                border-radius: 10px;
+                padding: 10px 0;
+                display: flex;
+                flex-direction: column;
+                z-index: 999;
+            }
+
+            #nav.active .menuicon {
+                align-self: flex-end;
+                margin-right: 15px;
+                margin-bottom: 10px;
+            }
+
+            #nav.active a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            /* Title */
+
+            #title {
+                padding: 20px;
+            }
+
+            #title h1 {
+                font-size: 28px;
+            }
+
+            #title p {
+                font-size: 15px;
+                line-height: 24px;
+            }
+
+            /* Cards */
+
+            #cards {
+
+                margin-top: 20px;
+
+                height: 65vh;
+
+                overflow-y: auto;
+                overflow-x: hidden;
+
+                display: flex;
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 20px;
+
+                padding: 50px 20px 20px;
+
+                border-top: 2px solid lavender;
+
+                border-top-left-radius: 120px;
+                border-top-right-radius: 120px;
+
+                background: radial-gradient(circle at center top,
+                        rgba(161, 146, 207, 0.15) 0%,
+                        rgba(15, 15, 15, 1) 70%);
+            }
+
+            #cards div {
+
+                width: 100%;
+                max-width: 450px;
+
+                min-width: unset;
+
+                height: auto;
+
+                padding: 22px;
+            }
+
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            #cards div h2 {
+                font-size: 20px;
+            }
+
+            #cards div p,
+            #cards div li {
+                font-size: 14px;
+                line-height: 22px;
+            }
+
+            .tech-list {
+                columns: 1;
+            }
+
+            #cards {
+                padding: 20px 15px;
+            }
+
+            #cards div {
+                width: 100%;
+            }
+
+            #cards div h2 {
+                font-size: 18px;
+            }
+            header {
+    height: 70px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 45px;
+}
+
+.menuicon {
+    display: block;
+    font-size: 22px;
+}
+
+#nav.active {
+    position: absolute;
+    top: 75px;
+    right: 10px;
+
+    width: 170px;
+
+    background-color: #a192cf;
+    border-radius: 12px;
+
+    padding: 8px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+#nav.active a {
+    padding: 10px;
+    font-size: 15px;
+}
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./logo1.png" alt="no" height="100px">
+        </div>
+        <div id="nav">
+            <i class="fa-solid fa-bars menuicon"></i>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./projects.html" class="active">Projects</a>
+            <a href="./experience.html">Experience</a>
+            <a href="./Skills.html">Skills</a>
+            <a href="./contacts.html">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="title">
+            <h1> Featured Projects </h1> <br>
+            <p>
+                A curated collection of web development and computer vision projects <br>
+                showcasing practical implementation,
+                user-focused design, and real-world problem solving.
+            </p>
+        </div>
+        <div id="cards">
+            <div>
+                <h2>🍽️ Cuisine Guides</h2> <br>
+                <p>
+                    Designed and developed a responsive multi-cuisine recipe platform <br>
+                    using HTML and CSS, structured for user-friendly navigation and <br>
+                    organized content presentation.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div>
+                <h2>🫀 Cardiac Arrest Prediction in Newborn Babies Using ML</h2> <br>
+                <p>
+                    Developed a ML-based healthcare prediction system to identify
+                    cardiac arrest risks in newborn babies using medical and physiological
+                    parameters.
+                </p> <br>
+
+                <h4>Technologies:</h4> <br>
+
+
+                <ul class="tech-list">
+                    <li>Python</li>
+                    <li>ML</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Django</li>
+                    <li>Scikit-Learn</li>
+                    <li>NumPy</li>
+
+                </ul>
+            </div>
+
+            <div>
+                <h2>💻 Air Canvas – Gesture-Based Virtual Whiteboard</h2> <br>
+                <p>
+                    Developed a real-time gesture-controlled virtual whiteboard using computer vision techniques.
+                    Implemented hand tracking and gesture recognition to enable contactless drawing and interaction.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>Python</li>
+                    <li>OpenCV</li>
+                    <li>MediaPipe</li>
+                    <li>Computer Vision</li>
+                </ul>
+            </div>
+            <div>
+                <h2>🎬 Netflix Clone </h2> <br>
+                <p>
+                    Built a responsive Netflix landing page featuring a gradient hero section, horizontal movie
+                    carousel, structured feature cards, and FAQ layout.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Flexbox</li>
+                    <li>Responsive Design </li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>📘 Facebook Clone</h2> <br>
+                <p>
+                    Built a front-end clone of Facebook to practice layout structuring, <br>
+                    component design, and responsive web development using modern CSS <br>
+                    techniques.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                </ul>
+
+            </div>
+            <div>
+                <h2>🍰 Amma’s Pastries Website </h2> <br>
+                <p>
+                    Built an e-commerce website clone featuring categorized product grids, curated collections, and
+                    interactive hover effects using Flexbox and CSS Grid.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>CSS Grid</li>
+                    <li>Flexbox</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>🍽️ Zomato Clone</h2> <br>
+                <p>
+                    Built a modern food delivery landing page featuring a fullscreen video hero section, grid-based
+                    feature layout, and animated UI components.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>Flexbox</li>
+                    <li>CSS Grid</li>
+                    <li>AOS</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>🍦 Frozen Yogurt Shop Webpage</h2> <br>
+                <p>
+                    Built a front-end clone of Facebook to practice layout structuring, <br>
+                    component design, and responsive web development using modern CSS <br>
+                    techniques.
+                </p> <br>
+                <h4>Technologies:</h4> <br>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const menuIcon = document.querySelector(".menuicon");
+        const nav = document.querySelector("#nav");
+
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>

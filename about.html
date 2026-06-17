@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Vinuthna</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f0f0f, #141220, #0f0f0f);
+            color: white;
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #a192cf;
+            border-radius: 20px;
+        }
+
+        #nav {
+            width: 700px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 23px;
+        }
+
+        #nav a:hover {
+            color: black;
+        }
+
+        #nav a.active {
+            color: black;
+        }
+
+        .menuicon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+        .about-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 90vh;
+            padding: 80px 120px;
+            flex-wrap: wrap;
+        }
+
+        .about-left {
+            max-width: 500px;
+        }
+
+        .about-left h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #A78BFA;
+        }
+
+        .about-left p {
+            line-height: 28px;
+            font-size: 18px;
+            color: #d1d1d1;
+            margin-bottom: 30px;
+        }
+
+        .resume-btn {
+            background: #A78BFA;
+            color: black;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .resume-btn:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+
+        .about-right {
+            perspective: 1200px;
+        }
+
+        .about-right img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #A78BFA;
+            box-shadow: 0 0 40px rgba(167, 139, 250, 0.4);
+            animation: flipY 1.3s ease-out forwards;
+            transition: transform 0.5s ease;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        .about-right img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes flipY {
+            0% {
+                transform: rotateY(90deg);
+                opacity: 0;
+            }
+
+            60% {
+                transform: rotateY(-15deg);
+            }
+
+            100% {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 22px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #A78BFA;
+        }
+
+        footer {
+            margin-top: 15px;
+            color: gray;
+            font-size: 14px;
+        }
+
+        @media(max-width:768px) {
+
+            /* Header */
+
+            header {
+                height: auto;
+                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            header img {
+                height: 80px;
+            }
+
+            #nav {
+                width: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .menuicon {
+                display: block;
+            }
+
+            #nav a {
+                display: none;
+            }
+
+            #nav.active {
+                position: absolute;
+                top: 100%;
+                right: 15px;
+                width: 220px;
+                background-color: #a192cf;
+                border-radius: 10px;
+                padding: 10px 0;
+                display: flex;
+                flex-direction: column;
+                z-index: 999;
+            }
+
+            #nav.active .menuicon {
+                align-self: flex-end;
+                margin-right: 15px;
+                margin-bottom: 10px;
+            }
+
+            #nav.active a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            /* About Section */
+
+            .about-section {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 20px;
+                gap: 40px;
+            }
+
+            .about-left {
+                max-width: 100%;
+            }
+
+            .about-left h1 {
+                font-size: 34px;
+            }
+
+            .about-left p {
+                font-size: 16px;
+                line-height: 26px;
+            }
+
+            .about-right img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .social-icons a {
+                margin-right: 0;
+            }
+            header {
+    height: 70px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 45px;
+}
+
+.menuicon {
+    display: block;
+    font-size: 22px;
+}
+
+#nav.active {
+    position: absolute;
+    top: 75px;
+    right: 10px;
+
+    width: 170px;
+
+    background-color: #a192cf;
+    border-radius: 12px;
+
+    padding: 8px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+#nav.active a {
+    padding: 10px;
+    font-size: 15px;
+}
+        }
+
+        @media(max-width:480px) {
+
+            .about-left h1 {
+                font-size: 28px;
+            }
+
+            .about-left p {
+                font-size: 15px;
+                line-height: 24px;
+            }
+
+            .about-right img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .resume-btn {
+                padding: 10px 20px;
+            }
+
+            footer {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img src="./logo1.png" alt="no" height="100px">
+        </div>
+        <div id="nav">
+            <i class="fa-solid fa-bars menuicon"></i>
+            <a href="./index.html">Home</a>
+            <a class="active" href="./about.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./experience.html">Experience</a>
+            <a href="./Skills.html">Skills</a>
+            <a href="./contacts.html">Contact</a>
+        </div>
+    </header>
+
+    <section class="about-section">
+
+        <div class="about-left">
+            <h1>About Me</h1>
+            <p>
+                I am a passionate Web Developer focused on creating responsive, user-friendly,
+                and visually engaging web applications. I enjoy transforming ideas into
+                functional digital experiences while continuously learning and improving my skills.
+            </p>
+
+            <a href="./VINUTHNA TUMMALA Resume.pdf" download>
+                <button class="resume-btn">Download Resume</button>
+            </a>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/vinuthna-tummala-0a2082273/" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:vinutummala06@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <footer>
+                © 2026 Vinuthna Tummala
+            </footer>
+        </div>
+
+        <div class="about-right">
+            <img src="./abutimg.png" alt="Profile Image">
+        </div>
+
+    </section>
+    <script>
+        const menuIcon = document.querySelector(".menuicon");
+        const nav = document.querySelector("#nav");
+
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>

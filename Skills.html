@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Vinuthna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #0f0f0f, #141220, #0f0f0f);
+            color: white;
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #a192cf;
+            border-radius: 20px;
+        }
+
+        #nav {
+            width: 700px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 23px;
+        }
+
+        #nav a:hover {
+            color: black;
+        }
+
+        #nav a.active {
+            color: black;
+        }
+
+        .menuicon {
+            display: none;
+            font-size: 22px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .skills-section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .skills-section h1 {
+            font-size: 40px;
+            margin-bottom: 60px;
+            color: #A78BFA;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+
+        .skill-card {
+            background: #1a1a1f;
+            padding: 40px 20px;
+            border-radius: 20px;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(167, 139, 250, 0.5);
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle span {
+            background: #141220;
+            width: 115px;
+            height: 115px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+        .html {
+            background: conic-gradient(#A78BFA 0% 99%, #2a2a2f 99% 100%);
+        }
+
+        .css {
+            background: conic-gradient(#A78BFA 0% 99%, #2a2a2f 99% 100%);
+        }
+
+        .js {
+            background: conic-gradient(#A78BFA 0% 99%, #2a2a2f 99% 100%);
+        }
+
+        .python {
+            background: conic-gradient(#A78BFA 0% 99%, #2a2a2f 99% 100%);
+        }
+
+        .react {
+            background: conic-gradient(#A78BFA 0% 75%, #2a2a2f 75% 100%);
+        }
+
+        .skill-card h3 {
+            margin-top: 10px;
+            font-size: 22px;
+        }
+
+        .skill-card p {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #bdbdbd;
+            line-height: 22px;
+        }
+
+        footer {
+            /* border: 2px solid white; */
+            margin-top: 100px;
+            color: #a192cf;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:768px) {
+
+            /* Navbar */
+
+            header {
+                height: 70px;
+                padding: 0 15px;
+                margin-bottom: 20px;
+                border-radius: 12px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            header img {
+                height: 40px;
+            }
+
+            #nav {
+                width: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .menuicon {
+                display: block;
+            }
+
+            #nav a {
+                display: none;
+            }
+
+            #nav.active {
+                position: absolute;
+                top: 75px;
+                right: 10px;
+
+                width: 170px;
+
+                background: #a192cf;
+                border-radius: 12px;
+
+                padding: 8px 0;
+
+                display: flex;
+                flex-direction: column;
+
+                z-index: 999;
+            }
+
+            #nav.active a {
+                display: block;
+                padding: 10px;
+                text-align: center;
+                font-size: 15px;
+            }
+
+            /* Skills Section */
+
+            .skills-section {
+                padding: 40px 15px;
+            }
+
+            .skills-section h1 {
+                font-size: 30px;
+                margin-bottom: 35px;
+            }
+
+            .skills-container {
+                gap: 20px;
+            }
+
+            /* Smaller Cards */
+
+            .skill-card {
+                padding: 25px 15px;
+                border-radius: 15px;
+            }
+
+            .circle {
+                width: 110px;
+                height: 110px;
+            }
+
+            .circle span {
+                width: 80px;
+                height: 80px;
+                font-size: 16px;
+            }
+
+            .skill-card h3 {
+                font-size: 18px;
+            }
+
+            .skill-card p {
+                font-size: 13px;
+                line-height: 20px;
+            }
+
+            footer {
+                margin-top: 50px;
+                font-size: 14px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <img src="./logo1.png" alt="no" height="100px">
+        </div>
+        <div id="nav">
+            <i class="fa-solid fa-bars menuicon"></i>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./experience.html">Experience</a>
+            <a class="active" href="./Skills.html">Skills</a>
+            <a href="./contacts.html">Contact</a>
+        </div>
+    </header>
+
+
+    <section class="skills-section">
+        <h1>My Skills</h1>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="circle html">
+                    <span>99%</span>
+                </div>
+                <h3>HTML</h3>
+                <p>Advanced semantic markup and responsive structure building.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle css">
+                    <span>99%</span>
+                </div>
+                <h3>CSS</h3>
+                <p>Modern layouts, animations, flexbox, grid & UI styling.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle js">
+                    <span>99%</span>
+                </div>
+                <h3>JavaScript</h3>
+                <p>Basic DOM manipulation and interactivity logic.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle python">
+                    <span>99%</span>
+                </div>
+                <h3>Python</h3>
+                <p>Problem solving, scripting, and backend fundamentals.</p>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle react">
+                    <span>75%</span>
+                </div>
+                <h3>React.js</h3>
+                <p>Currently learning modern component-based development.</p>
+            </div>
+
+        </div>
+        <footer>
+            © 2026 Vinuthna Tummala
+        </footer>
+    </section>
+    <script>
+        const menuIcon = document.querySelector(".menuicon");
+        const nav = document.querySelector("#nav");
+
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>

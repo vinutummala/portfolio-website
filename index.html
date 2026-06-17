@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to bottom,
+                    #0f0f0f,
+                    #141220,
+                    #0f0f0f);
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #a192cf;
+            border-radius: 20px;
+        }
+
+        #nav {
+            width: 700px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 23px;
+        }
+
+        #nav a:hover {
+            color: black;
+        }
+
+        #nav a.active {
+            color: black;
+        }
+
+        main {
+            color: rgb(212, 212, 212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 0 120px;
+            gap: 120px;
+            max-width: 1500px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        #left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 600px;
+        }
+
+        .hero-left p {
+            font-size: 30px;
+            line-height: 60px;
+            color: #A78BFA;
+        }
+
+        .hero-left h1 {
+            font-size: 30px;
+        }
+
+        .hero-right {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 25px rgba(167, 139, 250, 0.6);
+        }
+
+        #img img {
+
+            width: 420px;
+            max-width: 100%;
+
+            height: auto;
+            animation: zoomIn 1.2s ease forwards;
+            transition: transform 0.5s ease;
+        }
+
+        #img img:hover {
+            transform: scale(1.12);
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+        }
+
+        #anchor {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        #anchor a {
+            color: white;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        #anchor a:hover {
+            color: #A78BFA;
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+
+        .menuicon {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Tablet */
+
+        @media (max-width: 768px) {
+
+            header {
+                height: auto;
+                padding: 15px 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+            }
+
+            header img {
+                height: 80px;
+            }
+
+            #nav {
+                width: auto;
+                display: flex;
+                align-items: center;
+            }
+
+            .menuicon {
+                display: block;
+            }
+
+            /* Hide nav links initially */
+            #nav a {
+                display: none;
+            }
+
+            /* Show dropdown when menu clicked */
+            #nav.active {
+                position: absolute;
+                top: 100%;
+                right: 15px;
+                width: 220px;
+                background-color: #a192cf;
+                border-radius: 10px;
+                padding: 10px 0;
+                display: flex;
+                flex-direction: column;
+                z-index: 1000;
+            }
+
+            #nav.active .menuicon {
+                align-self: flex-end;
+                margin-right: 15px;
+                margin-bottom: 10px;
+            }
+
+            #nav.active a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            main {
+                padding: 30px 20px;
+                gap: 40px;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            #left {
+                align-items: center;
+            }
+
+            .hero-left p {
+                font-size: 22px;
+                line-height: 35px;
+            }
+
+            .hero-left h1 {
+                font-size: 32px;
+            }
+
+            .hero-right {
+                font-size: 36px;
+            }
+
+            #img img {
+                width: 280px;
+                max-width: 100%;
+            }
+
+            #anchor {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            header {
+    height: 70px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 45px;
+}
+
+.menuicon {
+    display: block;
+    font-size: 22px;
+}
+
+#nav.active {
+    position: absolute;
+    top: 75px;
+    right: 10px;
+
+    width: 170px;
+
+    background-color: #a192cf;
+    border-radius: 12px;
+
+    padding: 8px 0;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 999;
+}
+
+#nav.active a {
+    padding: 10px;
+    font-size: 15px;
+}
+        }
+
+        /* Small Phones */
+
+        @media (max-width: 480px) {
+
+            .hero-left p {
+                font-size: 18px;
+            }
+
+            .hero-left h1 {
+                font-size: 26px;
+            }
+
+            .hero-right {
+                font-size: 28px;
+            }
+
+            #img img {
+                width: 220px;
+            }
+
+            #anchor a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div>
+            <img src="./logo1.png" alt="no" height="100px">
+        </div>
+        <div id="nav">
+            <i class="fa-solid fa-bars menuicon"></i>
+            <a class="active" href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./experience.html">Experience</a>
+            <a href="./Skills.html">Skills</a>
+            <a href="./contacts.html">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div id="left">
+            <div class="hero-left" data-aos="fade-down">
+                <p>Hello, I'm</p>
+                <h1>Vinuthna Tummala</h1>
+            </div>
+
+            <div class="hero-right" data-aos="fade-right">
+                <h1>Full Stack Developer</h1>
+            </div>
+
+            <div id="anchor">
+                <a href="https://www.linkedin.com/in/vinuthna-tummala-0a2082273/"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="mailto:vinutummala06@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:9000311549"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
+
+        <div id="img">
+            <img src="./Untitled.png" alt="profile">
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1500,
+            delay: 200,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
+    <script>
+        const menu = document.querySelector(".menuicon");
+        const nav = document.querySelector("#nav");
+
+        menu.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+</body>
+
+</html>
